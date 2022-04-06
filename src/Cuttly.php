@@ -26,6 +26,8 @@ class Cuttly
 
         $response = $this->request($data)['url'];
 
+        dd($response);
+
         $url = $response['shortLink'];
 
         throw_if($response['status'] != 7, new ShortenRequestException('Given URL is incorrect'));
@@ -43,17 +45,17 @@ class Cuttly
      * @throws ShortenRequestException
      * @throws Throwable
      */
-    public function request(array $data = []): array
+    public function request(array $data = [])
     {
         $key = config('cuttly.api_key');
 
         throw_if(empty($key), new ApiCredentialsException);
 
         try {
-            $response = Http::get('https://cutt.ly/api/api.php', [
+            $response = json_decode(Http::get('https://cutt.ly/api/api.php', [
                 'key' => $key,
                 ...$data
-            ])->json();
+            ])->body());
         } catch (RequestException $exception) {
             throw new ShortenRequestException($exception->getMessage());
         }
