@@ -41,7 +41,7 @@ class Cuttly
      *
      * @param array $data
      *
-     * @return array
+     * @return mixed
      * @throws ApiCredentialsException
      * @throws ShortenRequestException
      * @throws Throwable
@@ -60,9 +60,8 @@ class Cuttly
                 ],
                 'query' => [
                     'key' => $key,
-                    ...$data
-                ]
-            ])->getBody(), false);
+                ] + $data
+            ])->getBody()->getContents());
         } catch (RequestException $exception) {
             throw new ShortenRequestException($exception->getMessage());
         }
