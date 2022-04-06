@@ -53,7 +53,8 @@ class Cuttly
         try {
             $response = json_decode((new Client)->request('GET','https://cutt.ly/api/api.php', [
                 'headers' => [
-
+                    'Content-Type' => 'application/json',
+                    'user-agent' => 'laravel-cuttly',
                 ],
                 'query' => [
                     'key' => $key,
