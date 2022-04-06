@@ -49,7 +49,7 @@ To shorten url you should use Shorten Url function
 ```php
 use Parsadanashvili\LaravelCuttly\Requests\ShortenUrl;
 
-return ShortenUrl::request('https://sprenty.com')
+return ShortenUrl::request('https://google.com')
     ->name('Name') //optional
     ->process();
 ```
