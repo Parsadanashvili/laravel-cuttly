@@ -1,6 +1,6 @@
 <?php
 
-namespace Parsadanshvili\LaravelCuttly\Concerns;
+namespace Parsadanashvili\LaravelCuttly\Concerns;
 
 abstract class ShortenRequestAttributes extends Request
 {

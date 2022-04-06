@@ -1,6 +1,6 @@
 <?php
 
-namespace Parsadanshvili\LaravelCuttly\Exceptions;
+namespace Parsadanashvili\LaravelCuttly\Exceptions;
 
 use Exception;
 

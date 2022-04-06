@@ -1,6 +1,6 @@
 <?php
 
-namespace Parsadanshvili\LaravelCuttly\Facades;
+namespace Parsadanashvili\LaravelCuttly\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -13,6 +13,6 @@ class Cuttly extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Parsadanshvili\LaravelCuttly\Cuttly::class;
+        return \Parsadanashvili\LaravelCuttly\Cuttly::class;
     }
 }

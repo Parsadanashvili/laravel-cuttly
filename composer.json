@@ -11,22 +11,22 @@
     },
     "authors": [
         {
-            "name": "parsadanashvili",
+            "name": "Nika Parsadanashvili",
             "email": "nikafarsa12@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Parsadanshvili\\LaravelCuttly\\": "src"
+            "Parsadanashvili\\LaravelCuttly\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Parsadanshvili\\LaravelCuttly\\CuttlyServiceProvider"
+                "Parsadanashvili\\LaravelCuttly\\CuttlyServiceProvider"
             ],
             "aliases": {
-                "Cuttly": "Parsadanshvili\\LaravelCuttly\\Facades\\Cuttly"
+                "Cuttly": "Parsadanashvili\\LaravelCuttly\\Facades\\Cuttly"
             }
         }
     }

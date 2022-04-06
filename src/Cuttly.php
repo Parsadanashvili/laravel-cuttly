@@ -1,6 +1,6 @@
 <?php
 
-namespace Parsadanshvili\LaravelCuttly;
+namespace Parsadanashvili\LaravelCuttly;
 
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Exception\RequestException;

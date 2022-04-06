@@ -1,6 +1,6 @@
 <?php
 
-namespace Parsadanshvili\LaravelCuttly\Requests;
+namespace Parsadanashvili\LaravelCuttly\Requests;
 
 use Parsadanshvili\LaravelCuttly\Concerns\ShortenRequest;
 
