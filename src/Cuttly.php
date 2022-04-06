@@ -36,7 +36,6 @@ class Cuttly
     /**
      * Send API request
      *
-     * @param string $method
      * @param array $data
      *
      * @return array
@@ -44,7 +43,7 @@ class Cuttly
      * @throws ShortenRequestException
      * @throws Throwable
      */
-    public function request(string $method, array $data = []): array
+    public function request(array $data = []): array
     {
         $key = config('cuttly.api_key');
 
