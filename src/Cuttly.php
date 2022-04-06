@@ -4,9 +4,9 @@ namespace Parsadanashvili\LaravelCuttly;
 
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Exception\RequestException;
-use Parsadanshvili\LaravelCuttly\Concerns\Request;
-use Parsadanshvili\LaravelCuttly\Exceptions\ApiCredentialsException;
-use Parsadanshvili\LaravelCuttly\Exceptions\ShortenRequestException;
+use Parsadanashvili\LaravelCuttly\Concerns\Request;
+use Parsadanashvili\LaravelCuttly\Exceptions\ApiCredentialsException;
+use Parsadanashvili\LaravelCuttly\Exceptions\ShortenRequestException;
 use Throwable;
 
 class Cuttly

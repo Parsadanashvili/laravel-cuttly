@@ -2,7 +2,7 @@
 
 namespace Parsadanashvili\LaravelCuttly\Concerns;
 
-use Parsadanshvili\LaravelCuttly\Facades\Cuttly;
+use Parsadanashvili\LaravelCuttly\Facades\Cuttly;
 
 abstract class ShortenRequest extends ShortenRequestAttributes
 {
