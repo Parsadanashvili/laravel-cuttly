@@ -24,7 +24,7 @@ Open `config/app.php` and add `CuttlyServiceProvider` to the `providers` array.
 
 Publish migrations and config by running:
 
-```
+```shell
 php artisan vendor:publish --provider="Parsadanashvili\LaravelCuttly\CuttlyServiceProvider"
 ```
 
