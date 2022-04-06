@@ -2,7 +2,7 @@
 
 namespace Parsadanashvili\LaravelCuttly\Requests;
 
-use Parsadanshvili\LaravelCuttly\Concerns\ShortenRequest;
+use Parsadanashvili\LaravelCuttly\Concerns\ShortenRequest;
 
 class ShortenUrl extends ShortenRequest
 {
