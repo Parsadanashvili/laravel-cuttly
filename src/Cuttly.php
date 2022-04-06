@@ -25,6 +25,8 @@ class Cuttly
     {
         $data = $request->toRequest();
 
+        dd($data);
+
         $response = $this->request($data);
 
         $url = $response->shortLink;
@@ -33,6 +35,31 @@ class Cuttly
 
         return $url;
     }
+
+
+    /**
+     *
+     * @param Request $request
+     *
+     * @return mixed
+     * @throws ShortenRequestException
+     * @throws Throwable
+     * @throws ApiCredentialsException
+     */
+    public function process(Request $request)
+    {
+        $data = $request->toRequest();
+
+        $response = $this->request($data);
+
+        $url = $response->shortLink;
+
+        throw_if($response->status != 7, new ShortenRequestException('Given URL is incorrect'));
+
+        return $url;
+    }
+
+
 
     /**
      * Send API request
@@ -51,7 +78,7 @@ class Cuttly
         throw_if(empty($key), new ApiCredentialsException);
 
         try {
-            $response = json_decode((new Client)->request('GET','https://cutt.ly/api/api.php', [
+            $request = (new Client)->get('https://cutt.ly/api/api.php', [
                 'headers' => [
                     'Content-Type' => 'application/json',
                     'user-agent' => 'laravel-cuttly',
@@ -59,11 +86,15 @@ class Cuttly
                 'query' => [
                     'key' => $key,
                 ] + $data
-            ])->getBody()->getContents());
+            ])->getBody()->getContents();
+
+            dd($request);
+
+            $response = json_decode($request);
         } catch (RequestException $exception) {
             throw new ShortenRequestException($exception->getMessage());
         }
-        
+
         dd($response);
 
         return $response;
