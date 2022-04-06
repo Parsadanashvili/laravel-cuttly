@@ -25,11 +25,11 @@ class Cuttly
     {
         $data = $request->toRequest();
 
-        $response = $this->request($data);
+        $response = $this->request($data)->url;
 
-        $url = $response['shortLink'];
+        $url = $response->shortLink;
 
-        throw_if($response['status'] != 7, new ShortenRequestException('Given URL is incorrect'));
+        throw_if($response->status != 7, new ShortenRequestException('Given URL is incorrect'));
 
         return $url;
     }
