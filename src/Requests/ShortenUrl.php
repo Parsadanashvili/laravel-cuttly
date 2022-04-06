@@ -15,4 +15,15 @@ class ShortenUrl extends ShortenRequest
     {
         $this->short($url);
     }
+
+    /**
+     * @return array
+     */
+    public function toRequest(): array
+    {
+        return array_filter([
+            'short' => $this->short,
+            'name' => $this->name ?: null,
+        ]);
+    }
 }

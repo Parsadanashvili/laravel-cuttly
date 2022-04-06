@@ -25,8 +25,6 @@ class Cuttly
     {
         $data = $request->toRequest();
 
-        dd($data);
-
         $response = $this->request($data);
 
         $url = $response->shortLink;
@@ -88,14 +86,10 @@ class Cuttly
                 ] + $data
             ])->getBody()->getContents();
 
-            dd($request);
-
             $response = json_decode($request);
         } catch (RequestException $exception) {
             throw new ShortenRequestException($exception->getMessage());
         }
-
-        dd($response);
 
         return $response;
     }
