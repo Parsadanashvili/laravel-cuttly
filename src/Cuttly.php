@@ -27,8 +27,6 @@ class Cuttly
 
         $response = $this->request($data);
 
-        dd($response);
-
         $url = $response->shortLink;
 
         throw_if($response->status != 7, new ShortenRequestException('Given URL is incorrect'));
@@ -65,6 +63,8 @@ class Cuttly
         } catch (RequestException $exception) {
             throw new ShortenRequestException($exception->getMessage());
         }
+        
+        dd($response);
 
         return $response;
     }
