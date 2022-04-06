@@ -15,6 +15,11 @@ abstract class ShortenRequestAttributes extends Request
     protected $name = "";
 
     /**
+     * @var boolean
+     */
+    protected $userDomain = false;
+
+    /**
      * @param string $url
      *
      * @return $this
@@ -34,6 +39,17 @@ abstract class ShortenRequestAttributes extends Request
     public function name(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     *
+     * @return $this
+     */
+    public function useDomain(): self
+    {
+        $this->userDomain = true;
 
         return $this;
     }

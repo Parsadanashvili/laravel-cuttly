@@ -23,6 +23,7 @@ class ShortenUrl extends ShortenRequest
     {
         return array_filter([
             'short' => $this->short,
+            'userDomain' => (int)$this->userDomain,
             'name' => $this->name ?: null,
         ]);
     }
