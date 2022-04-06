@@ -25,7 +25,7 @@ class Cuttly
     {
         $data = $request->toRequest();
 
-        $response = $this->request($data)->url;
+        $response = $this->request($data);
 
         dd($response);
 
