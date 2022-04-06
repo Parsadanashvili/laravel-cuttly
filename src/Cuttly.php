@@ -25,7 +25,7 @@ class Cuttly
     {
         $data = $request->toRequest();
 
-        $response = $this->request($data);
+        $response = $this->request($data)->url;
 
         $url = $response->shortLink;
 
@@ -33,7 +33,6 @@ class Cuttly
 
         return $url;
     }
-
 
     /**
      *
@@ -56,8 +55,6 @@ class Cuttly
 
         return $url;
     }
-
-
 
     /**
      * Send API request
