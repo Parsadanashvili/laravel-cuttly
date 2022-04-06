@@ -62,7 +62,7 @@ class Cuttly
                     'key' => $key,
                     ...$data
                 ]
-            ])->getBody()->getContents(), false);
+            ])->getBody(), false);
         } catch (RequestException $exception) {
             throw new ShortenRequestException($exception->getMessage());
         }
