@@ -24,7 +24,7 @@ class Cuttly
     {
         $data = $request->toRequest();
 
-        $response = $this->request($data)['url'];
+        $response = $this->request($data);
 
         $url = $response['shortLink'];
 
@@ -53,7 +53,7 @@ class Cuttly
             $response = json_decode(Http::get('https://cutt.ly/api/api.php', [
                 'key' => $key,
                 ...$data
-            ])->body());
+            ])->body(), false);
         } catch (RequestException $exception) {
             throw new ShortenRequestException($exception->getMessage());
         }
