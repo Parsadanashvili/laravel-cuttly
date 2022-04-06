@@ -2,6 +2,7 @@
 
 namespace Parsadanashvili\LaravelCuttly;
 
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Exception\RequestException;
 use Parsadanashvili\LaravelCuttly\Concerns\Request;
@@ -50,10 +51,15 @@ class Cuttly
         throw_if(empty($key), new ApiCredentialsException);
 
         try {
-            $response = json_decode(Http::get('https://cutt.ly/api/api.php', [
-                'key' => $key,
-                ...$data
-            ])->body(), false);
+            $response = json_decode((new Client)->request('GET','https://cutt.ly/api/api.php', [
+                'headers' => [
+
+                ],
+                'query' => [
+                    'key' => $key,
+                    ...$data
+                ]
+            ])->getBody()->getContents(), false);
         } catch (RequestException $exception) {
             throw new ShortenRequestException($exception->getMessage());
         }
