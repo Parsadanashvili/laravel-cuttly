@@ -51,6 +51,7 @@ use Parsadanashvili\LaravelCuttly\Requests\ShortenUrl;
 
 return ShortenUrl::request('https://google.com')
     ->name('Name') //optional
+    ->useDomain() //optional
     ->process();
 ```
 
