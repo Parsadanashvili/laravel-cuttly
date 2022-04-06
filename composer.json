@@ -1,0 +1,33 @@
+{
+    "name": "parsadanashvili/laravel-cuttly",
+    "description": "Cutt.ly Package For Shorten Your Links",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6|^7",
+        "illuminate/support": ">=5.3"
+    },
+    "authors": [
+        {
+            "name": "parsadanashvili",
+            "email": "nikafarsa12@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Parsadanshvili\\LaravelCuttly\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Parsadanshvili\\LaravelCuttly\\CuttlyServiceProvider"
+            ],
+            "aliases": {
+                "Cuttly": "Parsadanshvili\\LaravelCuttly\\Facades\\Cuttly"
+            }
+        }
+    }
+}
