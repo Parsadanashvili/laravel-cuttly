@@ -27,6 +27,8 @@ class Cuttly
 
         $response = $this->request($data)->url;
 
+        dd($response);
+
         $url = $response->shortLink;
 
         throw_if($response->status != 7, new ShortenRequestException('Given URL is incorrect'));
