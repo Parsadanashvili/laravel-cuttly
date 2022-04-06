@@ -50,9 +50,7 @@ class Cuttly
         throw_if(empty($key), new ApiCredentialsException);
 
         try {
-            $response = (new Http)->withHeaders([
-                'user-agent' => 'laravel-cuttly'
-            ])->get('https://cutt.ly/api/api.php', [
+            $response = Http::get('https://cutt.ly/api/api.php', [
                 'key' => $key,
                 ...$data
             ])->json();
